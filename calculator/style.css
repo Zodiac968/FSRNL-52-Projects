@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+}
+
+h1 {
+    position: absolute;
+    top: 5vh;
+    width: 100vw;
+    text-align: center;
+}
+
+#Container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+section {
+    border: 1px solid black;
+    width: 30vw;
+    height: 70vh;
+    padding: 10px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+input[type="text"] {
+    width: 90%;
+    height: 10%;
+    border: 1px solid black;
+    padding: 10px;
+    flex-basis: 100%;
+    text-align: right;
+}
+
+input[type="button"]:active {
+    background-color: darkgray;
+}
+
+input[type="button"] {
+    height: 10%;
+    border: 1px solid black;
+    flex-basis: 20%;
+}

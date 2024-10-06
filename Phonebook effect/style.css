@@ -1,0 +1,56 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+#Container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+h1 {
+    position: absolute;
+    top: 5vh;
+    width: 100vw;
+    text-align: center;
+}
+
+section {
+    border: 1px solid black;
+    width: 50vw;
+    height: 70vh;
+    padding: 10px;
+
+    /* For centering horizontally and vertically */
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+}
+
+section>*{
+    overflow: auto;
+}
+
+section ul {
+    list-style: none;
+}
+
+section ul li{
+    margin-bottom: 10px;
+}
+
+section ul li h3{
+    border: 1px solid red;
+    background-color: lightgray;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 50%;
+
+    position: sticky;
+    top: 0px;
+}
