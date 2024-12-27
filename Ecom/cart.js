@@ -10,20 +10,15 @@ refreshCards();
 
 function refreshCards(){
     productContainer.innerHTML = "";
-    createProductCard(products, productContainer, cartItemIds, "Home");
+    createProductCard(products.filter(({_id})=> isProductInCart(_id, cartItemIds)), productContainer, cartItemIds, "Cart");
 }
 
 productContainer.addEventListener("click", (event)=>{
     console.log(event.target);
     let isInCart = isProductInCart(event.target.dataset.id, cartItemIds);
     console.log(isInCart);
-    if(!isInCart){
-        cartItemIds = [...cartItemIds, event.target.dataset.id];
-        localStorage.setItem("cartItemId", JSON.stringify(cartItemIds));
-        refreshCards();
-    }
-    else{
-        location.href = "./cart.html"
-    }
+    cartItemIds = products.filter(({_id})=> isProductInCart(_id, cartItemIds) && _id !== event.target.dataset.id).map((prod)=> prod._id);
+    localStorage.setItem("cartItemId", JSON.stringify(cartItemIds));
+    refreshCards();
     console.log(cartItemIds);
 });
